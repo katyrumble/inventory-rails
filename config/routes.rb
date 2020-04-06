@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'assets#index'
+  resources :assets
   resources :locations
   resources :models
   resources :manufacturers

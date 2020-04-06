@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asset tag</th>
+      <th>Serial number</th>
+      <th>Category</th>
+      <th>Model</th>
+      <th>Primary user</th>
+      <th>Location</th>
+      <th>Purchase date</th>
+      <th>Warranty expiry</th>
+      <th>Notes</th>
+      <th>Is deleted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets.each do |asset| %>
+      <tr>
+        <td><%= asset.asset_tag %></td>
+        <td><%= asset.serial_number %></td>
+        <td><%= asset.category_id %></td>
+        <td><%= asset.model_id %></td>
+        <td><%= asset.primary_user %></td>
+        <td><%= asset.location_id %></td>
+        <td><%= asset.purchase_date %></td>
+        <td><%= asset.warranty_expiry %></td>
+        <td><%= asset.notes %></td>
+        <td><%= asset.is_deleted %></td>
+        <td><%= link_to 'Show', asset %></td>
+        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asset', new_asset_path %>

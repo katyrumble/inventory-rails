@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asset tag:</strong>
+  <%= @asset.asset_tag %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @asset.serial_number %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @asset.category_id %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @asset.model_id %>
+</p>
+
+<p>
+  <strong>Primary user:</strong>
+  <%= @asset.primary_user %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @asset.location_id %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @asset.purchase_date %>
+</p>
+
+<p>
+  <strong>Warranty expiry:</strong>
+  <%= @asset.warranty_expiry %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @asset.notes %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @asset.is_deleted %>
+</p>
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>
