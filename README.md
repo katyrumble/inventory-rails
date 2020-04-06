@@ -15,3 +15,14 @@ To create the development database:
 ```
 rake db:create
 ```
+### Running the Test Suite
+The test suite is the `rspec-rails` gem.
+
+To run the test suite, run:
+```
+bundle exec rspec
+```
+To test a single file, run:
+```
+rspec path/to/test_file.rb
+```
