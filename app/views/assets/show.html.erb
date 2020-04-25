@@ -12,12 +12,12 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @asset.category_id %>
+  <%= @asset.category.name %>
 </p>
 
 <p>
   <strong>Model:</strong>
-  <%= @asset.model_id %>
+  <%= @asset.model.name %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @asset.location_id %>
+  <%= @asset.location.name %>
 </p>
 
 <p>
@@ -43,11 +43,6 @@
 <p>
   <strong>Notes:</strong>
   <%= @asset.notes %>
-</p>
-
-<p>
-  <strong>Is deleted:</strong>
-  <%= @asset.is_deleted %>
 </p>
 
 <%= link_to 'Edit', edit_asset_path(@asset) %> |

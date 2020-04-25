@@ -11,57 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :asset_tag %>
-    <%= form.text_field :asset_tag %>
+  <div class="form-row">
+    <div class="field form-group col-md-6">
+      <%= form.label :asset_tag %>
+      <%= form.text_field :asset_tag, :class => "form-control-plaintext" %>
+    </div>
+    <div class="field form-group col-md-6">
+      <%= form.label :serial_number %>
+      <%= form.text_field :serial_number, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :serial_number %>
-    <%= form.text_field :serial_number %>
+  <div class="form-row">
+    <div class="field form-group col-md-6">
+      <%= form.label :category_id %>
+      <%= form.collection_select :category_name, Category.all, :name, :name, {}, {:class => "custom-select"} %>
+      <%# <%= form.text_field :category_id, :class => "form-control" %>
+    </div>
+    <div class="field form-group col-md-6">
+      <%= form.label :model_id %>
+      <%= form.collection_select :model_name, Model.all, :name, :name, {}, {:class => "custom-select"} %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="field form-group col-md-6">
+      <%= form.label :primary_user %>
+      <%= form.text_field :primary_user, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :location_id %>
+      <%= form.collection_select :location_name, Location.all, :name, :name, {}, {:class => "custom-select"} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+  <div class="form-row">
+    <div class="field form-group col-md-6">
+      <%= form.label :purchase_date %>
+      <%= form.datetime_select :purchase_date, :class => "form-control"%>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :warranty_expiry %>
+      <%= form.datetime_select :warranty_expiry, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :model_id %>
-    <%= form.text_field :model_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :primary_user %>
-    <%= form.text_field :primary_user %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location_id %>
-    <%= form.text_field :location_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :purchase_date %>
-    <%= form.datetime_select :purchase_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :warranty_expiry %>
-    <%= form.datetime_select :warranty_expiry %>
-  </div>
-
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_deleted %>
-    <%= form.check_box :is_deleted %>
+    <%= form.text_area :notes, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Update', :class => "btn btn-primary" %>
   </div>
 <% end %>
